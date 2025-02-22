@@ -12,7 +12,7 @@ Termine is a Game engine made for your terminal/dev console and written in Vanil
 </div>
 
 ## Usages
-[Simple Game](https://github.com/JamesLiame/termine/blob/current/examples/helloworld.lua)
+[Simple file writer](https://github.com/JamesLiame/termine/blob/current/examples/helloworld.lua)
 
 # Building and Installing
 building/installing instructions.
