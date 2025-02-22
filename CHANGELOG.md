@@ -1,0 +1,4 @@
+- [x] Added `writetf` method
+- [ ] Enable `readf` and `existf` method
+- [x] changed `spawn` function
+- [x] Added Docs and Website
