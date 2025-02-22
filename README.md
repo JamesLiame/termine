@@ -4,6 +4,13 @@
 
 Termine is a Game engine made for your terminal/dev console and written in Vanilla/Plain Lua
 
+<div align="center">
+
+![Terminal](https://badgen.net/badge/Cross/Terminal/grey?icon=terminal)
+![Cross-Platform](https://badgen.net/badge/Cross/platform/green?icon=sourcegraph)
+
+</div>
+
 ## How do i use this?
 simple,
 to add keybinds use `termine:addKeybinds(name: string,bind: string)`
