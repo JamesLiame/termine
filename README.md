@@ -12,7 +12,8 @@ Termine is a Game engine made for your terminal/dev console and written in Vanil
 </div>
 
 ## Usages
-[Simple file writer](https://github.com/JamesLiame/termine/blob/current/examples/helloworld.lua)
+[Simple file writer](https://github.com/JamesLiame/termine/blob/v0.1.0/examples/helloworld.lua)
+[File writer](https://github.com/JamesLiame/termine/blob/v0.1.0/examples/filewriter.lua)
 
 # Building and Installing
 building/installing instructions.
