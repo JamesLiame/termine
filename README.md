@@ -2,7 +2,12 @@
 Termine is a Game engine made for your terminal/dev console and written in Vanilla/Plain Lua
 
 ## How do i use this?
+simple,
+to add keybinds use `termine:addKeybinds(name: string,bind: string)`
 
+to check if something is a keybind use `termine.isKeybind(bind: string)`
+
+to Spawn/Put/Print text in a specified position on the terminal use `termine.spawn(char: string,x: number,y: number)`
 
 ## Usages
 [Simple Game](https://github.com/JamesLiame/termine/blob/current/examples/helloworld.lua)
