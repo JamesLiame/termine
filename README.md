@@ -24,8 +24,6 @@ build the repository by:
 git clone https://github.com/JamesLiame/termine.git
 cd termine\src
 ```
-
-when done making changes, do `git commit`
 ## Installing
 Go to this repository and get to `Releases/`
 
