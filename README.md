@@ -1,4 +1,7 @@
 # termine
+> [!NOTE]
+> This Engine is not for Game development and may change later in future years (yet)
+
 Termine is a Game engine made for your terminal/dev console and written in Vanilla/Plain Lua
 
 ## How do i use this?
