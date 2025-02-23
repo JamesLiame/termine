@@ -1,0 +1,47 @@
+.ubuntu-mono {
+  font-family: "Ubuntu Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ipm-l {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ipm {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ipm-m {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ipm-sb {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ipm-b {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ipm-t-i {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ipm-el-i {
+  font-family: "IBM Plex Mono", serif;
+  font-weight: 200;
+  font-style: italic;
+}
