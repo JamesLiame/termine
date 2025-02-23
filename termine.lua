@@ -54,12 +54,11 @@ function termine.spawn(char, pos)
 end
 
 -- Get Input from IO, self-explanatory.
-function termine:getinp(type)
-    local b = tostring(type)
-    assert(b ~= nil, "expected 1 argument, but got none")
-    local g = io.read(b)
-    assert(g ~= nil, "invalid type")
-    return g
+function termine:getinp(typ)
+    assert(typ ~= nil, "expected 1 argument, but got none")
+    local g, f = pcall(io.read, typ)
+    assert(g, "invalid type")
+    return f
 end
 
 -- Writes to file, self-explanatory
@@ -73,36 +72,25 @@ function termine:writetf(name, format, value, append)
 
     local v = tostring(value)
     local ff = name .. "." .. format
-    local file = io.open(ff, (append and "a" or "w"))
+    local n, f = pcall(io.open, ff, (append and "a" or "w"))
     --file = ((file ~= nil) and file or error("cannot find file :("))
-    assert(file ~= nil, "file cannot be found")
+    assert(n, "file cannot be found")
 
-    file:write(v)
-    local temp = file
-    file:close()
-    return temp
+    f:write(v)
+    return f and f:close()
 end
 
---[[
 -- Checks if file exists
 function termine:existf(file)
-    local f = io.open(tostring(file), "r")
-    local temp = f
-    temp = ((temp ~= nil) and temp)
-        ((f ~= nil) and f:close())
-    return temp
+    local n, _ = pcall(io.open, file, "r")
+    return n
 end
 
 -- Reads file
 function termine:readf(file)
-    local f = io.open(tostring(file), "r")
-    local temp = f
-    temp = ((temp ~= nil) and temp or temp)
-        ((f ~= nil) and f:close())
-    return temp
+    local b, f = pcall(io.open, file, "r")
+    assert(b, "file doesnt exist")
+    return f
 end
-
-WHY WONT THESE WORKKKKKKKKKKKKKK
-]]
 
 return termine
