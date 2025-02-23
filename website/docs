@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .tm {
+        color: #7395e4;
+      }
+      .method {
+        color: #e69494;
+      }
+      .function {
+        color: #e694de;
+      }
+      .str {
+        color: #f5c777;
+      }
+      .table {
+        color: #eed264;
+      }
+      .num {
+        color: #87d2d8;
+      }
+      .any {
+        color: #8accfc;
+      }
+      .boolean {
+        color: #6be26b;
+      }
+      .file {
+        color: #ff69ae;
+      }
+      .box {
+        background-image: linear-gradient(#f2f2f2, #ddd);
+        border-color: #afafaf;
+        border-width: 1px;
+        border-radius: 10px;
+        border-style: solid;
+      }
+      .props {
+        background-color: #fefefe;
+        border-color: #bdbdbd;
+        border-width: 1px;
+        border-radius: 10px;
+        border-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flexbox;
+        text-align: center;
+        background-color: #f2f2f2;
+        border-color: #afafaf;
+        border-width: 1px;
+        border-radius: 10px;
+        border-style: solid;
+      "
+    >
+      <h1 class="ipm">Docs of</h1>
+      <img src="../logo.png" width="100px" />
+    </div>
+    <br />
+    <div class="akbm box" id="akbm">
+      <h1 class="ubuntu-mono">
+        <span class="tm">termine</span>
+        :
+        <span class="method">addKeybind</span>
+        (name: <span class="str">string</span>, bind:
+        <span class="str">string</span>)
+        <span class="ipm" style="font-size: xx-small">[method]</span>
+      </h1>
+      <h1 class="ipm">
+        This method adds an key/bind to a table named
+        <span
+          ><span class="tm">termine</span>.<span class="table"
+            >keybinds</span
+          ></span
+        >
+      </h1>
+      <div class="props">
+        <h1 class="ubuntu-mono" style="font-weight: 800">Properties:</h1>
+        <div class="prop">
+          <h1 class="ipm">
+            name: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: keybind name</span
+            >
+          </h1>
+        </div>
+        <div class="prop">
+          <h1 class="ipm">
+            bind: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small">Info: binds</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="ikbf box" id="ikbf">
+      <h1 class="ubuntu-mono">
+        <span class="tm">termine</span>
+        .
+        <span class="function">isKeybind</span>
+        (bind: <span class="str">string</span>)
+        <span class="ipm" style="font-size: xx-small">[function]</span>
+      </h1>
+      <h1 class="ipm">
+        Checks if <span class="str">bind</span> is a valid keybind (along
+        <span class="tm">termine</span>.<span class="table">keybinds</span>)
+      </h1>
+      <h1 class="ipm">returns: <span class="boolean">boolean</span></h1>
+      <div class="props">
+        <h1 class="ubuntu-mono" style="font-weight: 800">Properties:</h1>
+        <div class="prop">
+          <h1 class="ipm">
+            bind: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: check bind</span
+            >
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="sf box">
+      <h1 class="ubuntu-mono">
+        <span class="tm">termine</span>
+        .
+        <span class="function">spawn</span>
+        (char: <span class="str">string</span>, {x,y}:
+        <span class="num">number*</span>)
+      </h1>
+      <h1 class="ipm">
+        Puts text on the terminal by <span class="ubuntu-mono">{x,y}</span>
+      </h1>
+      <h1 class="ipm">returns: <span class="file">stdout</span></h1>
+      <div class="props">
+        <h1 class="ubuntu-mono" style="font-weight: 800">Properties:</h1>
+        <div class="prop">
+          <h1 class="ipm">
+            char: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: The string for the text to be displayed</span
+            >
+          </h1>
+        </div>
+        <div class="prop">
+          <h1 class="ipm">
+            <span class="ubuntu-mono">{x,y}</span>:
+            <span class="num">number*</span>
+            <span class="ipm" style="font-size: xx-small">Info: Positions</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="gim box">
+      <h1 class="ubuntu-mono">
+        <span class="tm">termine</span>
+        :
+        <span class="method">getinp</span>
+        (tp: <span class="str">string</span>)
+      </h1>
+      <h1 class="ipm">Gets Input</h1>
+      <h1 class="ipm">returns: <span class="file">stdin</span></h1>
+      <div class="props">
+        <div class="prop">
+          <h1 class="ipm">type: <span class="str">string</span></h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="wtfm box">
+      <h1 class="ubuntu-mono">
+        <span class="tm">termine</span>
+        :
+        <span class="method">writetf</span>
+        (name: <span class="str">string</span>, format:
+        <span class="str">string</span>, value: <span class="any">any</span>,
+        append: <span class="boolean">boolean</span>)
+      </h1>
+      <h1 class="ipm">Creates/writes to file</h1>
+      <div class="props">
+        <h1 class="ubuntu-mono" style="font-weight: 800">Properties:</h1>
+        <div class="prop">
+          <h1 class="ipm">
+            name: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small">Info: file name</span>
+          </h1>
+        </div>
+        <div class="prop">
+          <h1 class="ipm">
+            format: <span class="str">string</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: file format</span
+            >
+          </h1>
+        </div>
+        <div class="prop">
+          <h1 class="ipm">
+            value: <span class="any">any</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: file value</span
+            >
+          </h1>
+        </div>
+        <div class="prop">
+          <h1 class="ipm">
+            append: <span class="boolean">boolean</span>
+            <span class="ipm" style="font-size: xx-small"
+              >Info: append value to file</span
+            >
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <h1
+      class="ipm"
+      style="font-size: xx-small; text-align: center; opacity: 50%"
+    >
+      end of doc
+    </h1>
+  </body>
+</html>
