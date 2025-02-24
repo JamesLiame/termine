@@ -1,12 +1,18 @@
 local termine = {}
+package.path = "../utils/self.lua"
+local self = require("self")
 
 -- Keybinds
 termine.keybinds = {}
 
 -- Version
-termine._version = { "0.1.0" --[[Version]], false --[[isAlpha]], false --[[isBeta]] }
+termine._version = { "0.beta.1.1" --[[Version]], false --[[isAlpha]], true --[[isBeta]] }
 
+-- entity types
+termine._enttypes = {}
 
+-- entities
+termine._ent = {}
 
 -- Adds a Keybind, self-explanatory
 function termine:addKeybind(name, bind)
@@ -72,12 +78,12 @@ function termine:writetf(name, format, value, append)
 
     local v = tostring(value)
     local ff = name .. "." .. format
-    local n, f = pcall(io.open, ff, (append and "a" or "w"))
+    local _, f = pcall(io.open, ff, (append and "a" or "w"))
     --file = ((file ~= nil) and file or error("cannot find file :("))
-    assert(n, "file cannot be found")
+    assert(f ~= nil, "file cannot be found")
 
     f:write(v)
-    return f and f:close()
+    f:close()
 end
 
 -- Checks if file exists
@@ -91,6 +97,64 @@ function termine:readf(file)
     local b, f = pcall(io.open, file, "r")
     assert(b, "file doesnt exist")
     return f
+end
+
+function termine.createEntityType(name, fnalt)
+    assert((type(name) == "string") or (type(name) == "table"), "Entity Type names must be either a table or a string")
+    assert((type(fnalt) == "function") or (type(fnalt) == "table"),
+        "Entity type Functionality must be a function or a func table")
+
+    local tf, tn = type(fnalt), type(name)
+    local bf, bn, bl = false, false, false
+    local tbl = {}
+    setmetatable(tbl, {})
+    tbl.__index = self:new(tbl)
+
+    -- no if statements plz
+    bn = (tn == "table")
+    bf = (tf == "table")
+    bl = (#tostring(bn) == #tostring(bf))
+
+    assert(bl, "name and fnalt tables are not the same length")
+
+    -- yez if statements and nesting plz
+    if bn then
+        for i, n in pairs(name) do
+            tn = type(n)
+            bn = (tn == "table")
+            assert(bn, "name table item " .. tostring(i) .. " is not a string")
+            if bf then
+                for ii, f in pairs(fnalt) do
+                    tf = type(f)
+                    bf = (tf == "table")
+                    assert(bf, "function table item " .. tostring(ii) .. " is not a function")
+                    termine._enttypes[n] = f
+                    tbl[n] = f
+                end
+            end
+        end
+    else
+        bn = (tn == "string")
+        bf = (tf == "function")
+        assert(bn, "name must be a string")
+        assert(bf, "fnalt must be a function")
+        termine._enttypes[name] = fnalt
+        tbl[name] = fnalt
+    end
+
+    function tbl:isEntityType(v)
+        return tbl[v] ~= nil
+    end
+
+    return tbl, name
+end
+
+function termine.createEntity(name, typ, values)
+    assert(type(typ) == "string", "Entity type must be a string")
+    assert(type(values) == "table", "Entity Values must be a table")
+    assert(termine._enttypes[typ] ~= nil, "type is not a valid entity type")
+    local n = tostring(name)
+    termine._ent[n] = { termine._enttypes[typ], values }
 end
 
 return termine
