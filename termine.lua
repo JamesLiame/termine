@@ -1,7 +1,4 @@
 local termine = {}
-package.path = "../utils/self.lua"
-local self = require("self")
-
 -- Keybinds
 termine.keybinds = {}
 
@@ -108,7 +105,7 @@ function termine.createEntityType(name, fnalt)
     local bf, bn, bl = false, false, false
     local tbl = {}
     setmetatable(tbl, {})
-    tbl.__index = self:new(tbl)
+    tbl.__index = tbl
 
     -- no if statements plz
     bn = (tn == "table")
