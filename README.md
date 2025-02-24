@@ -5,6 +5,8 @@
 
 Termine is a Game engine made for your terminal/dev console and written in Vanilla/Plain Lua
 
+> whyd i choose Termine as a name? i dont know.
+
 <div align="center">
 
 ![Terminal](https://badgen.net/badge/Cross/Terminal/grey?icon=terminal)
